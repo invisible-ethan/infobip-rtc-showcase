@@ -56,7 +56,7 @@ class PhoneCall extends Component {
             that.setState({status: 'Call finished: ' + event.name});
             console.log('Call finished: ' + event.name);
             that.setMediaStream(that.refs.remoteAudio, null);
-            that.setValuesAfterCall();
+            that.setValuesAfterCall(); 
         });
         call.on(CallsApiEvent.ERROR, function (event) {
             console.log('Oops, something went very wrong! Message: ' + JSON.stringify(event));
@@ -75,7 +75,7 @@ class PhoneCall extends Component {
     callPhone = () => {
         if (this.state.destination) {
             let phoneCallOptions = PhoneCallOptions.builder()
-                .setFrom('33712345678')
+                .setFrom('85257000486')
                 .build();
             const activeCall = this.state.infobipRTC.callPhone(this.state.destination, phoneCallOptions);
             this.setCallEventHandlers(activeCall);
